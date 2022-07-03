@@ -1,0 +1,192 @@
+
+  <div class="row">
+    <div class="column" style="background-color:#aaa;">
+
+
+    <div class="columnRadar" style="border:dotted;margin-bottom: 5px;border-radius: 5px;margin-left: 5px;" >
+
+        <div class="radar1">
+          
+          <div class="radarColomun" id ="radarColomun" style="background-color:rgb(9, 8, 10);border-radius: 20px;">
+            <p style="color: black;">lines</p>
+          </div>
+          <div class="radarColomun" id ="radarColomun1" style="background-color:rgb(216, 213, 223);border-radius: 20px;">
+            <p style="color:rgb(216, 213, 223);">lines</p>
+          </div>
+          <div class="radarColomun" id ="radarColomun2" style="background-color:rgb(0, 255, 21);border-radius: 20px;">
+            <p style="color:rgb(0, 255, 21);">lines</p>
+          </div>
+        </div>
+
+        <div class="radar1">
+          <!-- <p>robot picture</p> -->
+          <img src="/images/orange-5g.jpg" alt="" style="height: 120px;margin-left: 240px;">
+        </div>
+        
+    
+      </div>
+
+
+      <div class="columnRadar" style="background-color:white;border-radius: 5px;margin-left: 5px;">
+
+      <div class="Commande left">
+        
+        <div class="cm1">
+          <a id ="btn_up" class="BottonUp"><i class="fa fa-arrow-circle-up" style="font-size:80px;color:black;margin-left: 140px;"></i></a>
+        </div>
+        <div class="cm1">
+          <a  id ="btn_left"  class="BottonLetf"><i class="fa fa-arrow-circle-left" style="font-size:80px;color:black;margin-left: 55px;"></i></a>
+          <a  id ="btn_right"  class="BottomRight"><i class="fa fa-arrow-circle-right" style="font-size:80px;color:black;margin-left: 95px;"></i></a>
+        </div>
+        <div class="cm1">
+          <a id ="btn_buttom" class="BottomDown"><i class="fa fa-arrow-circle-down" style="font-size:80px;color:black;margin-left: 140px;"></i></a>
+        </div>
+      </div>
+
+      <div class="Commande right">
+      
+        <div class="contact-form-row">
+          <div class="form-group col-sm">
+            <label>Vitesse: </label>
+            <input style="background-color: orange;" type="range" class="range-slider__range" name="ageInputName" id="ageInputIdV" value="24" min="0" max="240" onchange="changeSpeed(this);" oninput="ageOutputIdV.value = ageInputIdV.value">
+            <output name="ageOutputName" id="ageOutputIdV" class="range-slider__value">24</output>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+
+    </div>
+    <div class="column" style="background-color:rgb(19, 17, 17);">
+        <div class="widget-chart-two-content media-body" id="cadre" style="border:dashed;display:none;">
+            <video width="100%" height="100%" id="live"></video>
+        </div>
+        <button class="btn btn-dark btn-rounded waves-light waves-effect" id="voice-start">
+            <i class="material-icons" style="margin-top: 0.4rem;">Parler</i>
+          </button>
+        <button class="btn btn-dark btn-rounded waves-light waves-effect" id="start">
+            <i class="material-icons" style="margin-top: 0.4rem;">Activer</i>
+        </button>
+        <button class="btn btn-dark btn-rounded waves-light waves-effect" id="stop">
+        <i class="material-icons" style="margin-top: 0.4rem;">Stopper</i>
+        </button>
+    </div>
+
+  </div>
+
+  <div class="rowbottom">
+    <div class="columnbottom">
+
+
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#popup">Bras Robot</button>
+      <!-- Pop-up -->
+      <div id="popup" class="modal">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+          <div class="contact-form-row">
+            <div class="form-group col-sm">
+              <label>Pince: </label>
+              <input style="margin-left: 50px; background-color: orange;" type="range" class="range-slider__range" name="ageInputName" id="ageInputId" value="24" min="0" max="180" onchange="changeSpeed(this);" oninput="ageOutputId.value = ageInputId.value">
+              <output name="ageOutputName" id="ageOutputId" class="range-slider__value">24</output>
+            </div>
+          </div>
+
+          </div>
+          <div class="modal-header">
+          <!-- <p> Rotule </p> -->
+          <div class="contact-form-row">
+            <div class="form-group col-sm">
+              <label>Rotule: </label>
+              <input style="margin-left: 45px; background-color: orange;" type="range" class="range-slider__range" name="ageInputName" id="ageInputIdR" value="24" min="0" max="180" onchange="changeSpeed(this);" oninput="ageOutputIdR.value = ageInputIdR.value">
+              <output name="ageOutputName" id="ageOutputIdR" class="range-slider__value">24</output>
+            </div>
+          </div>
+          </div>
+          <div class="modal-header">
+          <!-- <p> Poignet </p> -->
+          <div class="contact-form-row">
+            <div class="form-group col-sm">
+              <label>Poignet: </label>
+              <input style="margin-left: 35px; background-color: orange;" type="range" class="range-slider__range" name="ageInputName" id="ageInputIdP" value="24" min="0" max="180" onchange="changeSpeed(this);" oninput="ageOutputIdP.value = ageInputIdP.value">
+              <output name="ageOutputName" id="ageOutputIdP" class="range-slider__value">24</output>
+            </div>
+          </div>
+          </div>
+          <div class="modal-header">
+          <!-- <p> Coude</p> -->
+          <div class="contact-form-row">
+            <div class="form-group col-sm">
+              <label>Coude: </label>
+              <input style="margin-left: 43px; background-color: orange;" type="range" class="range-slider__range" name="ageInputName" id="ageInputIdC" value="24" min="0" max="180" onchange="changeSpeed(this);" oninput="ageOutputIdC.value = ageInputIdC.value">
+              <output name="ageOutputName" id="ageOutputIdC" class="range-slider__value">24</output>
+            </div>
+          </div>
+          </div>
+          <div class="modal-header">
+          <!-- <p> Epaule </p> -->
+          <div class="contact-form-row">
+            <div class="form-group col-sm">
+              <label>Epaule: </label>
+              <input style="margin-left: 43px; background-color: orange;" type="range" class="range-slider__range" name="ageInputName" id="ageInputIdE" value="24" min="0" max="180" onchange="changeSpeed(this);" oninput="ageOutputIdE.value = ageInputIdE.value">
+              <output name="ageOutputName" id="ageOutputIdE" class="range-slider__value">24</output>
+            </div>
+          </div>
+          </div>
+          <div class="modal-body">
+          <!-- <p> Base</p> -->
+          <div class="contact-form-row">
+            <div class="form-group col-sm">
+              <label>Base: </label>
+              <input style="margin-left: 58px; background-color: orange;" type="range" class="range-slider__range" name="ageInputName" id="ageInputIdB" value="24" min="0" max="180" onchange="changeSpeed(this);" oninput="ageOutputIdB.value = ageInputIdB.value">
+              <output name="ageOutputName" id="ageOutputIdB" class="range-slider__value">24</output>
+            </div>
+          </div>
+          </div>
+          <div class="modal-footer">
+          <!-- <p> Footer du pop-up</p> -->
+        <button  id="send" class="btn btn-secondary" data-dismiss="modal">Envoyer</button>
+          </div>
+        </div>
+        </div>
+      </div>
+
+
+
+
+
+     <!--
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <div class="col s6">
+      <button class="btn btn-dark btn-rounded waves-light waves-effect" id="start">
+          <i class="material-icons" style="margin-top: 0.4rem;">video_call</i>
+      </button>
+      <button class="btn btn-dark btn-rounded waves-light waves-effect" id="stop">
+        <i class="material-icons" style="margin-top: 0.4rem;">video_call_stop</i>
+      </button>
+      <button class="btn btn-dark btn-rounded waves-light waves-effect" id="voice-start">
+        <i class="material-icons" style="margin-top: 0.4rem;">voice-start</i>
+      </button>
+      <button class="btn btn-dark btn-rounded waves-light waves-effect" id="voice-stop">
+        <i class="material-icons" style="margin-top: 0.4rem;">voice-stop</i>
+      </button>
+      <span>&nbsp; En direct</span>
+    </div>
+    <div class="col-sm-6 col-xl-3">
+      <div class="card">
+          <div class="card-body">
+              <h4 class="text-muted">Video Live ...</h4>
+              <div class="media align-items-center">
+                  <div class="widget-chart-two-content media-body" id="cadre" style="border:dashed;display:none;">
+                      <video width="100%" height="100%" id="live"></video>
+                  </div>
+                  div dir="ltr" class="knob-chart">
+                      <button class="btn btn-dark">Activer</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+-->
