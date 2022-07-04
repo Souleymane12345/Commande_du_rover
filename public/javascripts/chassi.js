@@ -2,32 +2,37 @@ $(function() {
     var socket = io.connect();
 
     $('#btn_left').click(function(){
-        let tab = [];
+        let command = "";
         let speed = document.getElementById("ageOutputIdV").innerText;
-        tab.push('255','-255',speed)
-        socket.emit('staut_chassi', tab);
+        command = "{-"+speed+":"+speed+"}\n";
+        socket.emit('staut_chassi', command);
     });
 
     $('#btn_right').click(function(){
-        let tab = [];
+        let command = "";
         let speed = document.getElementById("ageOutputIdV").innerText;
-        tab.push('-255','255',speed)
-        socket.emit('staut_chassi', tab);
+        command = "{"+speed+":"+"-"+speed+"}\n";
+        socket.emit('staut_chassi', command);
     });
     
     $('#btn_up').click(function(){
-        let tab = [];
+        let command = "";
         let speed = document.getElementById("ageOutputIdV").innerText;
-        tab.push('255','255',speed)
-        socket.emit('staut_chassi', tab);
+        command = "{"+speed+":"+speed+"}\n";
+        socket.emit('staut_chassi', command);
     });
 
     $('#btn_buttom').click(function(){
-        let tab = [];
+        let command = "";
         let speed = document.getElementById("ageOutputIdV").innerText;
-        tab.push('-255','-255',speed)
-        socket.emit('staut_chassi', tab);
+        command = "{-"+speed+":"+"-"+speed+"}\n";
+        socket.emit('staut_chassi', command);
+    });
+
+    $('#btn_stop').click(function(){
+        let command = "";
+        command = "{"+0+":"+""+0+"}\n";
+        socket.emit('staut_chassi', command);
     });
 
 })
-

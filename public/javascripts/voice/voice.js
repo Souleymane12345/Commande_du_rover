@@ -18,16 +18,33 @@ $(function() {
             console.log(words);
             for (let i = 0; i < words.length; i++) {
                 if (words[i] == 'gauche') {
-                    socket.emit('staut_chassi', '0');
+                    let command = "";
+                    let speed = document.getElementById("ageOutputIdV").innerText;
+                    command = "{-"+speed+":"+speed+"}\n";
+                    socket.emit('staut_chassi', command);
                 }
                 if (words[i] == 'droite') {
-                    socket.emit('staut_chassi', '1');
+                    let command = "";
+                    let speed = document.getElementById("ageOutputIdV").innerText;
+                    command = "{"+speed+":"+"-"+speed+"}\n";
+                    socket.emit('staut_chassi', command);
                 }
                 if (words[i] == 'avance') {
-                    socket.emit('staut_chassi', '2');
+                    let command = "";
+                    let speed = document.getElementById("ageOutputIdV").innerText;
+                    command = "{"+speed+":"+speed+"}\n";
+                    socket.emit('staut_chassi', command);
                 }
+                if (words[i] == 'retourne' ) {
+                    let command = "";
+                    let speed = document.getElementById("ageOutputIdV").innerText;
+                    command = "{-"+speed+":"+"-"+speed+"}\n";
+                    socket.emit('staut_chassi', command);              }
+
                 if (words[i] == 'arrête') {
-                    socket.emit('staut_chassi', '3');
+                    let command = "";
+                    command = "{"+0+":"+""+0+"}\n";
+                    socket.emit('staut_chassi', command);              
                 }
 
                 if (words[i] == 'allume') {
